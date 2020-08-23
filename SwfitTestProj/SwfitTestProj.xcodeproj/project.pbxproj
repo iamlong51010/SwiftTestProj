@@ -9,12 +9,26 @@
 /* Begin PBXBuildFile section */
 		04237A6724EF666F005AAE85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04237A6624EF666F005AAE85 /* AppDelegate.swift */; };
 		04237A6924EF666F005AAE85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04237A6824EF666F005AAE85 /* SceneDelegate.swift */; };
-		04237A6B24EF666F005AAE85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04237A6A24EF666F005AAE85 /* ContentView.swift */; };
 		04237A6D24EF6675005AAE85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04237A6C24EF6675005AAE85 /* Assets.xcassets */; };
 		04237A7024EF6675005AAE85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04237A6F24EF6675005AAE85 /* Preview Assets.xcassets */; };
 		04237A7324EF6675005AAE85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04237A7124EF6675005AAE85 /* LaunchScreen.storyboard */; };
 		04237A7E24EF6675005AAE85 /* SwfitTestProjTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04237A7D24EF6675005AAE85 /* SwfitTestProjTests.swift */; };
 		04237A8924EF6675005AAE85 /* SwfitTestProjUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04237A8824EF6675005AAE85 /* SwfitTestProjUITests.swift */; };
+		04237A9824EF9DEB005AAE85 /* FileOpe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04237A9724EF9DEB005AAE85 /* FileOpe.swift */; };
+		04237A9A24EF9EC3005AAE85 /* SentenceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04237A9924EF9EC3005AAE85 /* SentenceData.swift */; };
+		04237A9C24EFA26B005AAE85 /* TimeMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04237A9B24EFA26B005AAE85 /* TimeMgr.swift */; };
+		04237A9E24EFA2D7005AAE85 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04237A9D24EFA2D7005AAE85 /* UserData.swift */; };
+		04237AA024EFAF68005AAE85 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04237A9F24EFAF68005AAE85 /* HomeView.swift */; };
+		04237AA224EFBB9A005AAE85 /* ColorMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04237AA124EFBB9A005AAE85 /* ColorMgr.swift */; };
+		04237AA424EFBC26005AAE85 /* LanguageSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04237AA324EFBC26005AAE85 /* LanguageSetView.swift */; };
+		04237AA624EFBC5A005AAE85 /* RecordHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04237AA524EFBC5A005AAE85 /* RecordHistoryView.swift */; };
+		04237AA924F0059E005AAE85 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04237AA824F0059E005AAE85 /* RecordView.swift */; };
+		04237AAB24F00993005AAE85 /* UIMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04237AAA24F00993005AAE85 /* UIMgr.swift */; };
+		04D9641724F12D3900285E6B /* HttpMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9641624F12D3900285E6B /* HttpMgr.swift */; };
+		04D9641924F14C2A00285E6B /* HttpAccessMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9641824F14C2A00285E6B /* HttpAccessMgr.swift */; };
+		04D9641B24F1609900285E6B /* MyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9641A24F1609900285E6B /* MyTextView.swift */; };
+		04D990CD24F22B55000AEBF0 /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D990CC24F22B55000AEBF0 /* RecordDetailView.swift */; };
+		04D990CF24F22F79000AEBF0 /* ProtocolMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D990CE24F22F79000AEBF0 /* ProtocolMgr.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +52,6 @@
 		04237A6324EF666F005AAE85 /* SwfitTestProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwfitTestProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04237A6624EF666F005AAE85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04237A6824EF666F005AAE85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04237A6A24EF666F005AAE85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04237A6C24EF6675005AAE85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04237A6F24EF6675005AAE85 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		04237A7224EF6675005AAE85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +62,21 @@
 		04237A8424EF6675005AAE85 /* SwfitTestProjUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwfitTestProjUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04237A8824EF6675005AAE85 /* SwfitTestProjUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwfitTestProjUITests.swift; sourceTree = "<group>"; };
 		04237A8A24EF6675005AAE85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04237A9724EF9DEB005AAE85 /* FileOpe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileOpe.swift; sourceTree = "<group>"; };
+		04237A9924EF9EC3005AAE85 /* SentenceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceData.swift; sourceTree = "<group>"; };
+		04237A9B24EFA26B005AAE85 /* TimeMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMgr.swift; sourceTree = "<group>"; };
+		04237A9D24EFA2D7005AAE85 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		04237A9F24EFAF68005AAE85 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		04237AA124EFBB9A005AAE85 /* ColorMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMgr.swift; sourceTree = "<group>"; };
+		04237AA324EFBC26005AAE85 /* LanguageSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSetView.swift; sourceTree = "<group>"; };
+		04237AA524EFBC5A005AAE85 /* RecordHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHistoryView.swift; sourceTree = "<group>"; };
+		04237AA824F0059E005AAE85 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		04237AAA24F00993005AAE85 /* UIMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMgr.swift; sourceTree = "<group>"; };
+		04D9641624F12D3900285E6B /* HttpMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMgr.swift; sourceTree = "<group>"; };
+		04D9641824F14C2A00285E6B /* HttpAccessMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpAccessMgr.swift; sourceTree = "<group>"; };
+		04D9641A24F1609900285E6B /* MyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextView.swift; sourceTree = "<group>"; };
+		04D990CC24F22B55000AEBF0 /* RecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
+		04D990CE24F22F79000AEBF0 /* ProtocolMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolMgr.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +127,14 @@
 		04237A6524EF666F005AAE85 /* SwfitTestProj */ = {
 			isa = PBXGroup;
 			children = (
+				04237AA724F00506005AAE85 /* UITool */,
+				04237A9624EF9DC0005AAE85 /* Data */,
 				04237A6624EF666F005AAE85 /* AppDelegate.swift */,
 				04237A6824EF666F005AAE85 /* SceneDelegate.swift */,
-				04237A6A24EF666F005AAE85 /* ContentView.swift */,
+				04237AA324EFBC26005AAE85 /* LanguageSetView.swift */,
+				04237AA524EFBC5A005AAE85 /* RecordHistoryView.swift */,
+				04D990CC24F22B55000AEBF0 /* RecordDetailView.swift */,
+				04237A9F24EFAF68005AAE85 /* HomeView.swift */,
 				04237A6C24EF6675005AAE85 /* Assets.xcassets */,
 				04237A7124EF6675005AAE85 /* LaunchScreen.storyboard */,
 				04237A7424EF6675005AAE85 /* Info.plist */,
@@ -134,6 +167,31 @@
 				04237A8A24EF6675005AAE85 /* Info.plist */,
 			);
 			path = SwfitTestProjUITests;
+			sourceTree = "<group>";
+		};
+		04237A9624EF9DC0005AAE85 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				04237A9724EF9DEB005AAE85 /* FileOpe.swift */,
+				04D9641824F14C2A00285E6B /* HttpAccessMgr.swift */,
+				04237A9924EF9EC3005AAE85 /* SentenceData.swift */,
+				04237A9B24EFA26B005AAE85 /* TimeMgr.swift */,
+				04237A9D24EFA2D7005AAE85 /* UserData.swift */,
+				04D9641624F12D3900285E6B /* HttpMgr.swift */,
+				04D990CE24F22F79000AEBF0 /* ProtocolMgr.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		04237AA724F00506005AAE85 /* UITool */ = {
+			isa = PBXGroup;
+			children = (
+				04237AA124EFBB9A005AAE85 /* ColorMgr.swift */,
+				04237AAA24F00993005AAE85 /* UIMgr.swift */,
+				04237AA824F0059E005AAE85 /* RecordView.swift */,
+				04D9641A24F1609900285E6B /* MyTextView.swift */,
+			);
+			path = UITool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +325,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04237A9824EF9DEB005AAE85 /* FileOpe.swift in Sources */,
+				04237AA024EFAF68005AAE85 /* HomeView.swift in Sources */,
+				04D9641924F14C2A00285E6B /* HttpAccessMgr.swift in Sources */,
+				04237A9C24EFA26B005AAE85 /* TimeMgr.swift in Sources */,
+				04D9641B24F1609900285E6B /* MyTextView.swift in Sources */,
+				04237AA924F0059E005AAE85 /* RecordView.swift in Sources */,
+				04237AA424EFBC26005AAE85 /* LanguageSetView.swift in Sources */,
+				04237A9E24EFA2D7005AAE85 /* UserData.swift in Sources */,
+				04D9641724F12D3900285E6B /* HttpMgr.swift in Sources */,
+				04237A9A24EF9EC3005AAE85 /* SentenceData.swift in Sources */,
+				04237AA624EFBC5A005AAE85 /* RecordHistoryView.swift in Sources */,
 				04237A6724EF666F005AAE85 /* AppDelegate.swift in Sources */,
+				04D990CD24F22B55000AEBF0 /* RecordDetailView.swift in Sources */,
+				04237AA224EFBB9A005AAE85 /* ColorMgr.swift in Sources */,
+				04237AAB24F00993005AAE85 /* UIMgr.swift in Sources */,
 				04237A6924EF666F005AAE85 /* SceneDelegate.swift in Sources */,
-				04237A6B24EF666F005AAE85 /* ContentView.swift in Sources */,
+				04D990CF24F22F79000AEBF0 /* ProtocolMgr.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,14 +508,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwfitTestProj/Preview Content\"";
-				DEVELOPMENT_TEAM = X443Y8A46W;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwfitTestProj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xiaolonglv.donttouchit.SwfitTestProj;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xxx.testsomething;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,14 +529,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwfitTestProj/Preview Content\"";
-				DEVELOPMENT_TEAM = X443Y8A46W;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwfitTestProj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xiaolonglv.donttouchit.SwfitTestProj;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xxx.testsomething;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
