@@ -35,7 +35,6 @@ final class UserData : ObservableObject {
     @Published var recentRecordStartIndex : Int = -1
     @Published var recentRecordEndIndex : Int = -1
     @Published var recentRecordSeeEndIndex : Int = -1
-    @Published var lastRecordOfLastStart : RequestRecord? = nil
     
     private var recordArrayChanged = false
     
@@ -74,11 +73,6 @@ final class UserData : ObservableObject {
             arrReqRecord = FileOpe.LoadArrayInDocumentFile(subDirName: UserData.kSubdirName, fileName: UserData.kFileName) ?? []
         } else {
             arrReqRecord = []
-        }
-        if arrReqRecord.last == nil {
-            self.lastRecordOfLastStart = nil
-        } else {
-            self.lastRecordOfLastStart = arrReqRecord.last!.copy()
         }
         refreshRelatedDataAfterRecListChanged()
     }

@@ -9,7 +9,7 @@
 import Foundation
 
 enum ESentenceType : Int {
-    case laststartrecord = 0
+    case lastrecord = 0
     case recenthistory
     case languageselect
     case cancel
@@ -39,7 +39,7 @@ final class SentenceData {
     private init() {
         self.sentence.removeAll()
         
-        self.sentence[ESentenceType.laststartrecord.rawValue] = ["Last Record Of Last Start","上次启动最后一次记录","上次啟動最後一次記錄","最後のレコードを前回起動"]
+        self.sentence[ESentenceType.lastrecord.rawValue] = ["Last Record","最后一次记录","最後一次記錄","最後のレコード"]
         self.sentence[ESentenceType.recenthistory.rawValue] = ["History Query","历史查询","歷史査詢","履歴の検索"]
         self.sentence[ESentenceType.languageselect.rawValue] = ["Language Select","语言选择","語言選擇","言語選択"]
         self.sentence[ESentenceType.cancel.rawValue] = ["cancel","取消","取消","キャンセル"]

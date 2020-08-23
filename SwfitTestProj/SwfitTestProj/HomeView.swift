@@ -30,13 +30,13 @@ struct HomeView: View, RecordClickProtocol {
         
         NavigationView {
             VStack {
-                Text(GlobalGetSentence(sentenceType: .laststartrecord))
+                Text(GlobalGetSentence(sentenceType: .lastrecord))
                     .bold()
                     .font(.largeTitle)
                     .padding()
                 
                 Spacer()
-                RecordView(myParent: self, reqRecord: self.userData.lastRecordOfLastStart, isSpecial: true, isHeightLimited: true)
+                RecordView(myParent: self, reqRecord: self.userData.arrReqRecord.last, isSpecial: true, isHeightLimited: true)
                 Spacer()
                 
                 Button(action: {
