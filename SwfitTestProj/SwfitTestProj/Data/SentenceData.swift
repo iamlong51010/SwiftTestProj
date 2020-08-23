@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ESentenceType : Int {
+enum ESentenceType : Int, CaseIterable {
     case lastrecord = 0
     case recenthistory
     case languageselect

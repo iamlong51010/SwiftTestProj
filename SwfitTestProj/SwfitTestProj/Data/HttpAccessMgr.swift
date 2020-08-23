@@ -25,17 +25,10 @@ final class HttpAccessMgr {
     }
     
     func startAccess() {
-        
-        /*
-        Thread.detachNewThread {
-            print("A new thread,name:\(Thread.current)")
-        }
-        */
-        
         if self.accessThread == nil {
             self.accessThread = Thread(target: self, selector: #selector(run), object: nil)
-            self.accessThread!.start()
         }
+        self.accessThread!.start()
     }
     
     @objc private func run() {
@@ -43,7 +36,7 @@ final class HttpAccessMgr {
             Thread.sleep(forTimeInterval: 5)
             
             HttpMgr.GlobalHttpGet(urlstr: HttpMgr.kHttpUrlTest, success: { (strData) in
-                print("___cur req data is:\(strData)")
+                //print("___cur req data is:\(strData)")
                 
                 DispatchQueue.main.async(execute: {
                     self.accessThreadCondition.lock()
@@ -52,11 +45,13 @@ final class HttpAccessMgr {
                     self.accessThreadCondition.signal()
                 })
             }, fail: { (error) in
+                /*
                 if error != nil {
                     print("___cur req error is: \(error!)")
                 } else {
                     print("___cur req error is: nil")
                 }
+                */
                 self.accessThreadCondition.signal()
             })
             self.accessThreadCondition.wait()

@@ -22,12 +22,25 @@ class SwfitTestProjTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        XCTAssertNoThrow(HttpMgr.GlobalHttpGet(urlstr: "www.baidu.com", success: { (strData) in
+        }, fail: { (error) in
+        }), "---warning, HttpMgr.GlobalHttpGet have some throw!!!")
+        
+        XCTAssertNoThrow(UserData.globalGetIns().loadUserData(), "---warning, load user data process have some throw!!!")
+        
+        var sentence = ""
+        for someType in ESentenceType.allCases {
+            sentence = GlobalGetSentence(sentenceType: someType)
+            XCTAssertTrue(!sentence.isEmpty, "---waining, some sentence is empty!!!")
+        }
     }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
+            UserData.globalGetIns().loadUserData()
         }
     }
 
