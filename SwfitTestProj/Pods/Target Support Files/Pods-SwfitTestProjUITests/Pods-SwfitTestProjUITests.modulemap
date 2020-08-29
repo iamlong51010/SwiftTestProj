@@ -1,0 +1,6 @@
+framework module Pods_SwfitTestProjUITests {
+  umbrella header "Pods-SwfitTestProjUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
