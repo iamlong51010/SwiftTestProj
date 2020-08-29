@@ -30,7 +30,7 @@ struct HomeView: View, RecordClickProtocol {
         
         NavigationView {
             VStack {
-                Text(GlobalGetSentence(sentenceType: .lastrecord))
+                Text(ESentenceType.lastrecord.localized)
                     .bold()
                     .font(.largeTitle)
                     .padding()
@@ -43,7 +43,7 @@ struct HomeView: View, RecordClickProtocol {
                     self.curShowSheetType = 1
                     self.showSheet = true
                 }) {
-                    Text(GlobalGetSentence(sentenceType: .languageselect))
+                    Text(ESentenceType.languageselect.localized)
                     .font(.system(size: 18))
                 }
                 .buttonStyle(BorderlessButtonStyle())
@@ -54,13 +54,13 @@ struct HomeView: View, RecordClickProtocol {
                         self.navigationLinkClickID = 0
                     }
                 }) {
-                    Text(GlobalGetSentence(sentenceType: .recenthistory))
+                    Text(ESentenceType.recenthistory.localized)
                     .font(.system(size: 18))
                 }
                 .id(self.navigationLinkClickID)
                 .padding(8)
                 
-                Text(GlobalGetSentence(sentenceType: .remarkhomepage))
+                Text(ESentenceType.remarkhomepage.localized)
                     .font(.system(.caption))
                     .foregroundColor(.gray)
                     .padding(2)

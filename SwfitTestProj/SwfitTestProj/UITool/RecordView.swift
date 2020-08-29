@@ -30,7 +30,7 @@ struct RecordView: View {
     
     var recordContent : String {
         if self.reqRecord != nil {
-            return self.reqRecord!.content
+            return self.reqRecord!.content.toJsonString()
         } else {
             return "Empty Content"
         }

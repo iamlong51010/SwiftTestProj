@@ -7,13 +7,83 @@
 //
 
 import Foundation
+import RxSwift
+
+struct RecordData : Codable {
+    var current_user_url : String = ""
+    var current_user_authorizations_html_url : String = ""
+    var authorizations_url : String = ""
+    var code_search_url : String = ""
+    var commit_search_url : String = ""
+    var emails_url : String = ""
+    var emojis_url : String = ""
+    var events_url : String = ""
+    var feeds_url : String = ""
+    var followers_url : String = ""
+    var following_url : String = ""
+    var gists_url : String = ""
+    var hub_url : String = ""
+    var issue_search_url : String = ""
+    var issues_url : String = ""
+    var keys_url : String = ""
+    var label_search_url : String = ""
+    var notifications_url : String = ""
+    var organization_url : String = ""
+    var organization_repositories_url : String = ""
+    var organization_teams_url : String = ""
+    var public_gists_url : String = ""
+    var rate_limit_url : String = ""
+    var repository_url : String = ""
+    var repository_search_url : String = ""
+    var current_user_repositories_url : String = ""
+    var starred_url : String = ""
+    var starred_gists_url : String = ""
+    var user_url : String = ""
+    var user_organizations_url : String = ""
+    var user_repositories_url : String = ""
+    var user_search_url : String = ""
+    
+    func toJsonString() -> String {
+        do {
+            var result = try String(data: JSONEncoder().encode(self), encoding: String.Encoding.utf8)
+            result = (result != nil) ? result!.replacingOccurrences(of: "\\", with: "") : "json parse error!"
+            return result!
+        } catch {
+            return "json parse error!"
+        }
+    }
+    
+    init() {
+    }
+    
+    init(jsonStr : String) {
+        let data : Data? = jsonStr.data(using: String.Encoding.utf8)
+        
+        if data == nil || data!.isEmpty {
+            return
+        }
+        do {
+            self = try JSONDecoder().decode(RecordData.self, from: data!)
+        } catch {
+            fatalError("json parse error")
+        }
+    }
+}
 
 struct RequestRecord : Codable, Hashable, Identifiable, CopyProtocol {
+    static func == (lhs: RequestRecord, rhs: RequestRecord) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
     typealias Item = RequestRecord
     
     var id : Int
     var date : Date
-    var content : String
+    var content : RecordData
     
     func copy() -> RequestRecord {
         return RequestRecord(id: id, date: date, content: content)
@@ -28,7 +98,13 @@ final class UserData : ObservableObject {
     static let kFileName = "reqrecord.json"
     
     //固定存储数据
-    @Published var language : Int = 0
+    @Published var localizedBundle : Bundle = Bundle.main
+    @Published var language : Int = 0 {
+        didSet {
+            let path = Bundle.main.path(forResource:self.language.toLanguageType.toLanguageStr , ofType: "lproj")
+            self.localizedBundle = Bundle(path: path!) ?? Bundle.main
+        }
+    }
     @Published var arrReqRecord : [RequestRecord] = []
     
     //根据当前数据进行刷新
@@ -37,8 +113,20 @@ final class UserData : ObservableObject {
     @Published var recentRecordSeeEndIndex : Int = -1
     
     private var recordArrayChanged = false
+    private let disposeBag = DisposeBag()
+    private var subscriber : Disposable?
     
     private init() {
+        if self.subscriber == nil {
+            self.subscriber = HttpAccessMgr.globalGetIns().pubSubjectReqRecord
+            .subscribe(onNext: { message in
+                _ = self.addReqRecord(date: Date(), content: RecordData(jsonStr: message))
+            }, onError: { error in
+            }, onCompleted: {
+            }, onDisposed: {
+            })
+            self.subscriber?.disposed(by: self.disposeBag)
+        }
     }
     static var g_data : UserData? = nil
     static func globalGetIns() -> UserData {
@@ -81,7 +169,7 @@ final class UserData : ObservableObject {
             arrReqRecord[index].id = UserData.kMinRecordId+index
         }
     }
-    func addReqRecord(date:Date, content:String) -> RequestRecord? {
+    func addReqRecord(date:Date, content:RecordData) -> RequestRecord? {
         if arrReqRecord.count >= UserData.kMaxRecordIndex {
             arrReqRecord.removeFirst()
             let newRecId = arrReqRecord.last!.id+1

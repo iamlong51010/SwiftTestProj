@@ -19,7 +19,7 @@ struct LanguageSetView: View {
     
     var body: some View {
         VStack {
-            Text(GlobalGetSentence(sentenceType: .languageselect))
+            Text(ESentenceType.languageselect.localized)
                 .bold()
                 .font(.largeTitle)
                 .padding()
@@ -44,7 +44,7 @@ struct LanguageSetView: View {
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
-                        Text(GlobalGetSentence(sentenceType: .cancel))
+                        Text(ESentenceType.cancel.localized)
                         .font(.system(size: 16))
                     }
                     .buttonStyle(BorderlessButtonStyle())

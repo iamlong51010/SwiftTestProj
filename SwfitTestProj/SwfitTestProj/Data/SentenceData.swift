@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum ESentenceType : Int, CaseIterable {
-    case lastrecord = 0
+enum ESentenceType : String, CaseIterable {
+    case lastrecord
     case recenthistory
     case languageselect
     case cancel
@@ -17,6 +17,10 @@ enum ESentenceType : Int, CaseIterable {
     case scrollfullmsg
     case recorddetail
     case remarkhomepage
+    
+    var localized : String {
+        return self.rawValue.localized
+    }
 }
 
 enum ELanguageType : Int {
@@ -24,39 +28,44 @@ enum ELanguageType : Int {
     case ChineseSimple
     case ChineseComplex
     case Japanese
+    
+    var toLanguageStr : String {
+        switch self {
+        case .ChineseSimple:
+            return "zh-Hans"
+        case .ChineseComplex:
+            return "zh-Hant"
+        case .Japanese:
+            return "ja"
+        default:
+            return "en"
+        }
+    }
 }
 
-func GlobalGetSentence(sentenceType : ESentenceType) -> String {
-    return SentenceData.globalGetIns().getSentence(sentenceType: sentenceType)
+extension Int {
+    var toLanguageType : ELanguageType {
+        switch self {
+        case 1:
+            return .ChineseSimple
+        case 2:
+            return .ChineseComplex
+        case 3:
+            return .Japanese
+        default:
+            return .English
+        }
+    }
+}
+
+extension String {
+    var localized : String {
+        NSLocalizedString(self, tableName: "LocalWords", bundle: UserData.globalGetIns().localizedBundle, value: "", comment: "")
+    }
 }
 
 final class SentenceData {
     static let kLanguageList : [String] = ["English","简体中文","繁體中文","日本語"]
-    static var g_data : SentenceData? = nil
-    
-    var sentence : [Int : [String]] = [:]
-    
-    private init() {
-        self.sentence.removeAll()
-        
-        self.sentence[ESentenceType.lastrecord.rawValue] = ["Last Record","最后一次记录","最後一次記錄","最後のレコード"]
-        self.sentence[ESentenceType.recenthistory.rawValue] = ["History Query","历史查询","歷史査詢","履歴の検索"]
-        self.sentence[ESentenceType.languageselect.rawValue] = ["Language Select","语言选择","語言選擇","言語選択"]
-        self.sentence[ESentenceType.cancel.rawValue] = ["cancel","取消","取消","キャンセル"]
-        self.sentence[ESentenceType.newmessage.rawValue] = ["Some news coming, please click me or drag down to view.","有新消息了，请点击我或向下拖动查看。","有新消息了，請點擊我或向下拖動查看。","新しいニュースがありました。私をクリックするか、下にドラッグしてみてください。"]
-        self.sentence[ESentenceType.scrollfullmsg.rawValue] = ["It's the end","已经到底了","已經到底了","もうおしまいだ"]
-        self.sentence[ESentenceType.recorddetail.rawValue] = ["Record Details","记录详情","記錄詳情","詳細を記録"]
-        self.sentence[ESentenceType.remarkhomepage.rawValue] = ["Note: you can click record to view the record details.","备注：您可以点击记录以查看记录详情。","備註：您可以點擊記錄以查看記錄詳情。","備考：記録をクリックして記録の詳細を確認することができます。"]
-        
-        //self.sentence[ESentenceType.xxxxx.rawValue] = ["","","",""]
-    }
-    
-    static func globalGetIns() -> SentenceData {
-        if SentenceData.g_data == nil {
-            SentenceData.g_data = SentenceData()
-        }
-        return SentenceData.g_data!
-    }
     
     static func getDefaultLanguageTypeFromCurSystemLang() -> ELanguageType {
         let preferredLang = Bundle.main.preferredLocalizations.first! as NSString
@@ -72,14 +81,6 @@ final class SentenceData {
                 return .Japanese
             default:
                 return .English
-        }
-    }
-    
-    func getSentence(sentenceType:ESentenceType) -> String {
-        if UserData.globalGetIns().language >= 0 {
-            return self.sentence[sentenceType.rawValue]?[UserData.globalGetIns().language] ?? ""
-        } else {
-            return ""
         }
     }
 }

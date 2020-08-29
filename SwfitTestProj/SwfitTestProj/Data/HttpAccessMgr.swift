@@ -8,11 +8,13 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 final class HttpAccessMgr {
     
     private var accessThread : Thread? = nil
     var accessThreadCondition : NSCondition = NSCondition()
+    public let pubSubjectReqRecord = PublishSubject<String>()
     
     private init() {
     }
@@ -40,7 +42,10 @@ final class HttpAccessMgr {
                 
                 DispatchQueue.main.async(execute: {
                     self.accessThreadCondition.lock()
-                    _ = UserData.globalGetIns().addReqRecord(date: Date(), content: strData)
+                    //_ = UserData.globalGetIns().addReqRecord(date: Date(), content: RecordData(jsonStr: strData))
+                    
+                    self.pubSubjectReqRecord.onNext(strData)
+                    
                     self.accessThreadCondition.unlock()
                     self.accessThreadCondition.signal()
                 })

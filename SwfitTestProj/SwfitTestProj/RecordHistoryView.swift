@@ -108,7 +108,7 @@ struct RecordHistoryView: View, RecordClickProtocol {
     var body: some View {
         
         VStack {
-            Text(GlobalGetSentence(sentenceType: .recenthistory))
+            Text(ESentenceType.recenthistory.localized)
                 .bold()
                 .font(.largeTitle)
                 .padding()
@@ -121,7 +121,7 @@ struct RecordHistoryView: View, RecordClickProtocol {
                         self.userData.refreshRecentRecordSeeEndInfo()
                         self.initCurLoadPageIndex()
                    }) {
-                       Text(GlobalGetSentence(sentenceType: .newmessage))
+                    Text(ESentenceType.newmessage.localized)
                        .font(.system(size: 18))
                    }
                    .buttonStyle(BorderlessButtonStyle())
@@ -135,7 +135,7 @@ struct RecordHistoryView: View, RecordClickProtocol {
                 Button(action: loadMoreWithNoNewMsg) {
                     HStack {
                         Spacer()
-                        Text(self.isLoadOverWithNoNewMsg ? GlobalGetSentence(sentenceType: .scrollfullmsg) :  "")
+                        Text(self.isLoadOverWithNoNewMsg ? ESentenceType.scrollfullmsg.localized :  "")
                             .foregroundColor(.gray)
                         Spacer()
                     }

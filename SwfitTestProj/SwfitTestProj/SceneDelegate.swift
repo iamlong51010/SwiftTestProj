@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         /*
         for i in 0..<17 {
-            _ = UserData.globalGetIns().addReqRecord(date: Date(), content: "dfkjsdklfjaslvlsdlkvkldsajfsajfljsadlfjlsafjsadfdslkfjklsadjflkdsajklfjdslkajflkadsjfdsajklfjkdlsajfkldsajkfljsdklfjdsaklfjdkslafjkldsajfkldsajfklsajdklfjadsklfjkaldsjfkldasvklsndlvnsdlkvdkslvjkldsvlnsaklvnklsnvkldsnvklsndlkvnsdlkvnlsnvlan")
+            _ = UserData.globalGetIns().addReqRecord(date: Date(), content: RecordData())
         }
         */
  

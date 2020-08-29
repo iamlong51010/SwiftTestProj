@@ -25,7 +25,7 @@ struct RecordDetailView: View {
     
     var recordContent : String {
         if self.reqRecord != nil {
-            return self.reqRecord!.content
+            return self.reqRecord!.content.toJsonString()
         } else {
             return "Empty Content"
         }
@@ -33,7 +33,7 @@ struct RecordDetailView: View {
     
     var body: some View {
         VStack {
-            Text(GlobalGetSentence(sentenceType: .recorddetail))
+            Text(ESentenceType.recorddetail.localized)
                 .bold()
                 .font(.largeTitle)
                 .padding()

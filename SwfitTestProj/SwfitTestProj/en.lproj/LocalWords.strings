@@ -1,0 +1,16 @@
+/* 
+  LocalWords.strings
+  SwfitTestProj
+
+  Created by mac on 2020/8/29.
+  Copyright © 2020 mac. All rights reserved.
+*/
+
+"lastrecord" = "Last Record";
+"recenthistory" = "History Query";
+"languageselect" = "Language Select";
+"cancel" = "cancel";
+"newmessage" = "Some news coming, please click me or drag down to view.";
+"scrollfullmsg" = "It's the end";
+"recorddetail" = "Record Details";
+"remarkhomepage" = "Note: you can click record to view the record details.";

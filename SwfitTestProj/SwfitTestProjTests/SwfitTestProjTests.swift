@@ -31,7 +31,7 @@ class SwfitTestProjTests: XCTestCase {
         
         var sentence = ""
         for someType in ESentenceType.allCases {
-            sentence = GlobalGetSentence(sentenceType: someType)
+            sentence = someType.localized
             XCTAssertTrue(!sentence.isEmpty, "---waining, some sentence is empty!!!")
         }
     }
