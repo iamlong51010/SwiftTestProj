@@ -12,6 +12,23 @@ import Foundation
 final class UIMgr {
     static let kScreenWidth = UIScreen.main.bounds.width
     static let kScreenHeight = UIScreen.main.bounds.height
+    
+    static var g_viewLanguageSet : NLanguageSetView? = nil
+    static var g_viewRecordHistory : NRecordHistoryView? = nil
+    
+    static func GlobalGetLanguageSelectView() -> NLanguageSetView {
+        if UIMgr.g_viewLanguageSet == nil {
+            UIMgr.g_viewLanguageSet = NLanguageSetView()
+        }
+        return UIMgr.g_viewLanguageSet!
+    }
+    
+    static func GlobalGetRecordHistoryView() -> NRecordHistoryView {
+        if UIMgr.g_viewRecordHistory == nil {
+            UIMgr.g_viewRecordHistory = NRecordHistoryView()
+        }
+        return UIMgr.g_viewRecordHistory!
+    }
 }
 
 struct RefreshableTypes {

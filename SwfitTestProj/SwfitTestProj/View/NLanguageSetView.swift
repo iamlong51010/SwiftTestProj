@@ -1,19 +1,19 @@
 //
-//  LanguageSetView.swift
+//  NLanguageSetView.swift
 //  SwfitTestProj
 //
-//  Created by mac on 2020/8/21.
+//  Created by mac on 2020/8/30.
 //  Copyright © 2020 mac. All rights reserved.
 //
 
 import SwiftUI
 
-struct LanguageSetView: View {
-    @EnvironmentObject var userData : UserData
+struct NLanguageSetView: View, CloseSelfProtocol {
+    
+    @ObservedObject var viewModel : NLanguageSetViewModel = NLanguageSetViewModel()
     @Environment(\.presentationMode) var presentationMode
     
-    func clickOnLanguage(language:Int) -> Void {
-        UserData.globalGetIns().setLanguage(language: language)
+    func close() {
         self.presentationMode.wrappedValue.dismiss()
     }
     
@@ -25,14 +25,14 @@ struct LanguageSetView: View {
                 .padding()
             
             List {
-                ForEach(0..<SentenceData.kLanguageList.count) {language in
+                ForEach(0..<self.viewModel.languageList.count) {language in
                     
                     HStack {
                         Spacer()
                         Button(action: {
-                            self.clickOnLanguage(language: language)
+                            self.viewModel.clickOnLanguage(language: language)
                         }) {
-                            Text(SentenceData.kLanguageList[language])
+                            Text(self.viewModel.languageList[language])
                             .font(.system(size: 16))
                         }
                         .buttonStyle(BorderlessButtonStyle())
@@ -42,7 +42,7 @@ struct LanguageSetView: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
+                        self.close()
                     }) {
                         Text(ESentenceType.cancel.localized)
                         .font(.system(size: 16))
@@ -52,11 +52,14 @@ struct LanguageSetView: View {
                 }
             }
         }
+        .onAppear() {
+            self.viewModel.setView(view: self)
+        }
     }
 }
 
-struct LanguageSetView_Previews: PreviewProvider {
+struct NLanguageSetView_Previews: PreviewProvider {
     static var previews: some View {
-        LanguageSetView().environmentObject(UserData.globalGetIns())
+        NLanguageSetView()
     }
 }

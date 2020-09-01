@@ -2,7 +2,7 @@
 //  SwfitTestProjUITests.swift
 //  SwfitTestProjUITests
 //
-//  Created by mac on 2020/8/21.
+//  Created by mac on 2020/9/1.
 //  Copyright © 2020 mac. All rights reserved.
 //
 
@@ -25,8 +25,8 @@ class SwfitTestProjUITests: XCTestCase {
 
     func testExample() {
         // UI tests must launch the application that they test.
-        //let app = XCUIApplication()
-        //app.launch()
+//        let app = XCUIApplication()
+//        app.launch()
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

@@ -50,13 +50,13 @@ final class HttpAccessMgr {
                     self.accessThreadCondition.signal()
                 })
             }, fail: { (error) in
-                /*
-                if error != nil {
-                    print("___cur req error is: \(error!)")
-                } else {
-                    print("___cur req error is: nil")
-                }
-                */
+                
+//                if error != nil {
+//                    print("___cur req error is: \(error!)")
+//                } else {
+//                    print("___cur req error is: nil")
+//                }
+                
                 self.accessThreadCondition.signal()
             })
             self.accessThreadCondition.wait()

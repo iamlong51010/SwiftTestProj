@@ -14,7 +14,7 @@ target 'SwfitTestProj' do
   end
 
   target 'SwfitTestProjUITests' do
-    inherit! :search_paths
+    # inherit! :search_paths
     # Pods for testing
   end
 
